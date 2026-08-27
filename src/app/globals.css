@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #efe8dc;
+  --surface: #fffdfa;
+  --surface2: #e7dcc8;
+  --text: #2a2420;
+  --muted: #7a6f62;
+  --accent: #c14a1f;
+  --accent-dim: #e3c4b3;
+  --green: #3c5a3f;
+  --line: #ddd3c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.font-display {
+  font-family: var(--font-oswald), Oswald, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono-ibm), "IBM Plex Mono", monospace;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@keyframes fcb-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fcb-ring {
+    animation: none !important;
+    display: none !important;
+  }
+}
