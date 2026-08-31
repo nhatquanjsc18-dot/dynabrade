@@ -72,15 +72,15 @@ export default function Header() {
 
   return (
     <header className="border-b border-[var(--line)] bg-[color:rgba(239,232,220,0.92)] sticky top-0 z-10 backdrop-blur-sm">
-      <div className="wrap flex justify-between py-2 text-[0.7rem] text-[var(--muted)] border-b border-[var(--line)] tracking-wide">
+      <div className="wrap flex justify-between py-3.5 text-[0.7rem] text-[var(--muted)] border-b border-[var(--line)] tracking-wide">
         <span>NHÀ PHÂN PHỐI CHÍNH HÃNG DYNABRADE TẠI VIỆT NAM</span>
         <span>HOTLINE TƯ VẤN KỸ THUẬT</span>
       </div>
-      <div className="wrap flex items-center justify-between py-[1.1rem]">
+      <div className="wrap flex items-center justify-between py-6">
         <Link href="/" className="font-display font-bold text-[1.35rem] uppercase tracking-wide">
           DYNA<span className="text-[var(--accent)]">BRADE</span>_VN
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-[0.85rem] font-medium text-[var(--muted)]">
+        <nav className="hidden md:flex items-center gap-10 text-[0.85rem] font-medium text-[var(--muted)]">
           <div className="relative flex items-center" ref={groupRef}>
             <button
               type="button"
