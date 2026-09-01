@@ -38,8 +38,9 @@ export default function CatalogClient({
 }) {
   const searchParams = useSearchParams();
   const initialCat = searchParams.get("cat") ?? categories[0]?.key ?? "";
+  const initialQuery = searchParams.get("q") ?? "";
   const [activeCat, setActiveCat] = useState(initialCat);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
 
   const searching = query.trim().length > 0;
 
