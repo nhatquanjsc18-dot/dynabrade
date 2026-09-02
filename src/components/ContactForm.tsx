@@ -1,36 +1,49 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import siteConfig from "../../data/site.json";
 
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const subject = `Yêu cầu tư vấn từ website - ${name}`;
-    const body = [
-      `Họ và tên: ${name}`,
-      `Số điện thoại: ${phone}`,
-      `Công ty / Đơn vị: ${company}`,
-      `Nội dung: ${message}`,
-    ].join("\n");
-    window.location.href = `mailto:nhatquanjsc18@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: siteConfig.web3formsAccessKey,
+          subject: `Yêu cầu tư vấn từ website - ${name}`,
+          from_name: "Website Nhất Quán",
+          name,
+          phone,
+          company,
+          message,
+        }),
+      });
+      const data = await res.json();
+      setStatus(data.success ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="bg-[var(--surface)] border border-[var(--line)] rounded-md p-10 text-center">
         <div className="text-[2.2rem] mb-3">✅</div>
-        <h3 className="font-display uppercase text-[1.15rem] mb-2.5">Đã mở ứng dụng email</h3>
+        <h3 className="font-display uppercase text-[1.15rem] mb-2.5">Đã gửi yêu cầu tư vấn!</h3>
         <p className="text-[var(--muted)] text-[0.9rem] leading-relaxed">
-          Vui lòng bấm gửi trong ứng dụng email vừa mở. Cần hỗ trợ ngay? Gọi hotline{" "}
+          Cảm ơn bạn đã liên hệ. Đội ngũ Nhất Quán sẽ phản hồi qua điện thoại hoặc email trong
+          vòng 24 giờ làm việc.
+          <br />
+          Cần hỗ trợ ngay? Gọi hotline{" "}
           <a href="tel:0907811767" className="text-[var(--accent)] font-semibold">
             0907 811 767
           </a>
@@ -77,6 +90,7 @@ export default function ContactForm() {
       </Field>
       <Field label="Nội dung cần tư vấn">
         <textarea
+          required
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -84,11 +98,17 @@ export default function ContactForm() {
           className={inputClass}
         />
       </Field>
+      {status === "error" && (
+        <p className="text-[0.85rem] text-[var(--accent)] mb-3">
+          Gửi không thành công, vui lòng thử lại hoặc gọi hotline 0907 811 767.
+        </p>
+      )}
       <button
         type="submit"
-        className="bg-[var(--accent)] text-[#fff6ee] font-bold px-7 py-3.5 text-[0.85rem] uppercase tracking-wide rounded-[4px] w-full mt-2"
+        disabled={status === "sending"}
+        className="bg-[var(--accent)] text-[#fff6ee] font-bold px-7 py-3.5 text-[0.85rem] uppercase tracking-wide rounded-[4px] w-full mt-2 disabled:opacity-60"
       >
-        Gửi yêu cầu →
+        {status === "sending" ? "Đang gửi..." : "Gửi yêu cầu →"}
       </button>
     </form>
   );

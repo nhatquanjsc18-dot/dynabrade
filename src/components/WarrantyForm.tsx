@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import siteConfig from "../../data/site.json";
 
 export default function WarrantyForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [fields, setFields] = useState({
     name: "",
     phone: "",
@@ -18,30 +19,43 @@ export default function WarrantyForm() {
     setFields((f) => ({ ...f, [key]: value }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const body = [
-      `Họ và tên: ${fields.name}`,
-      `Số điện thoại: ${fields.phone}`,
-      `Model máy / Mã sản phẩm: ${fields.model}`,
-      `Số serial: ${fields.serial}`,
-      `Ngày mua hàng: ${fields.date}`,
-      `Nơi mua hàng: ${fields.store}`,
-      `Mô tả tình trạng / ghi chú: ${fields.note}`,
-    ].join("\n");
-    window.location.href = `mailto:nhatquanjsc18@gmail.com?subject=${encodeURIComponent(
-      `Đăng ký bảo hành - ${fields.name}`
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: siteConfig.web3formsAccessKey,
+          subject: `Đăng ký bảo hành - ${fields.name}`,
+          from_name: "Website Nhất Quán",
+          name: fields.name,
+          phone: fields.phone,
+          model: fields.model,
+          serial: fields.serial,
+          purchase_date: fields.date,
+          store: fields.store,
+          note: fields.note,
+        }),
+      });
+      const data = await res.json();
+      setStatus(data.success ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="bg-[var(--surface)] border border-[var(--line)] rounded-md p-10 text-center">
         <div className="text-[2.2rem] mb-3">✅</div>
-        <h3 className="font-display uppercase text-[1.15rem] mb-2.5">Đã mở ứng dụng email</h3>
+        <h3 className="font-display uppercase text-[1.15rem] mb-2.5">Đã nhận được đăng ký bảo hành!</h3>
         <p className="text-[var(--muted)] text-[0.9rem] leading-relaxed">
-          Vui lòng bấm gửi trong ứng dụng email vừa mở. Cần hỗ trợ ngay? Gọi hotline{" "}
+          Cảm ơn bạn đã đăng ký. Đội ngũ Nhất Quán sẽ xác nhận thời hạn bảo hành qua điện thoại
+          hoặc email trong vòng 24 giờ làm việc.
+          <br />
+          Cần hỗ trợ ngay? Gọi hotline{" "}
           <a href="tel:0907811767" className="text-[var(--accent)] font-semibold">
             0907 811 767
           </a>
@@ -126,11 +140,17 @@ export default function WarrantyForm() {
           className={inputClass}
         />
       </Field>
+      {status === "error" && (
+        <p className="text-[0.85rem] text-[var(--accent)] mb-3">
+          Gửi không thành công, vui lòng thử lại hoặc gọi hotline 0907 811 767.
+        </p>
+      )}
       <button
         type="submit"
-        className="bg-[var(--accent)] text-[#fff6ee] font-bold px-7 py-3.5 text-[0.85rem] uppercase tracking-wide rounded-[4px] w-full mt-2"
+        disabled={status === "sending"}
+        className="bg-[var(--accent)] text-[#fff6ee] font-bold px-7 py-3.5 text-[0.85rem] uppercase tracking-wide rounded-[4px] w-full mt-2 disabled:opacity-60"
       >
-        Gửi đăng ký bảo hành →
+        {status === "sending" ? "Đang gửi..." : "Gửi đăng ký bảo hành →"}
       </button>
     </form>
   );
