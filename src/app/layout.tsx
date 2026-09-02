@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 
-const GA_MEASUREMENT_ID = "G-K55MKBK9MX";
+const GA_MEASUREMENT_ID = "G-VF5J0C3WS9";
 
 const oswald = Oswald({
   variable: "--font-oswald",
