@@ -153,6 +153,12 @@ export default function HomePage() {
       </section>
 
       <section id="industries" className="wrap pb-16">
+        <div className="flex justify-between items-end pb-8 border-b border-[var(--line)] mb-10">
+          <h2 className="font-display uppercase text-[1.9rem] m-0">Ứng Dụng Theo Ngành</h2>
+          <span className="font-mono text-[var(--muted)] text-[0.8rem]">
+            {INDUSTRIES.length} ngành
+          </span>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {INDUSTRIES.map((ind) => (
             <Link
