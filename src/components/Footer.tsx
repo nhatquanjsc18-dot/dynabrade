@@ -34,7 +34,7 @@ export default function Footer() {
             </h6>
             <ul className="list-none m-0 p-0 space-y-2 text-[0.85rem] text-[var(--muted)]">
               <li>Về Nhất Quán</li>
-              <li><Link href="/dai-ly">Mạng lưới đại lý</Link></li>
+              <li><Link href="/nha-phan-phoi">Mạng lưới đại lý</Link></li>
               <li><Link href="/bao-hanh">Bảo hành & dịch vụ</Link></li>
             </ul>
           </div>

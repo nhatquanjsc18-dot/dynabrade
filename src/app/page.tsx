@@ -54,7 +54,7 @@ export default function HomePage() {
                 Xem catalogue
               </Link>
               <Link
-                href="/dai-ly"
+                href="/nha-phan-phoi"
                 className="border border-[rgba(255,248,242,0.55)] text-[#fff8f2] px-6 py-3.5 text-[0.85rem] font-semibold rounded-[3px]"
               >
                 Tìm đại lý gần bạn

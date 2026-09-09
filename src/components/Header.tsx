@@ -104,7 +104,7 @@ export default function Header() {
           DYNA<span className="text-[var(--accent)]">BRADE</span>_VN
         </Link>
         <nav className="hidden md:flex items-center gap-10 text-[0.85rem] font-medium text-[var(--muted)]">
-          <Link href="/dai-ly" className="hover:text-[var(--text)]">
+          <Link href="/nha-phan-phoi" className="hover:text-[var(--text)]">
             Nhà phân phối
           </Link>
           <div className="relative flex items-center" ref={groupRef}>
