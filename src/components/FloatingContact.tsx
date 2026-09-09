@@ -17,16 +17,19 @@ export default function FloatingContact() {
     <div className="fixed right-[1.4rem] bottom-[1.4rem] z-[200] flex flex-col items-end gap-3">
       <a
         href="tel:0907811767"
-        aria-label="Gọi điện"
-        title="Gọi điện: 0907.811.767"
-        className="group relative w-[52px] h-[52px] rounded-full flex items-center justify-center shadow-[0_6px_20px_rgba(20,16,12,0.28)] bg-[var(--green)]"
+        aria-label="Gọi điện: 0907 811 767"
+        title="Gọi điện: 0907 811 767"
+        className="group relative flex items-center gap-2.5 h-[52px] pl-3.5 pr-5 rounded-full shadow-[0_6px_20px_rgba(20,16,12,0.28)]"
+        style={{ background: "linear-gradient(135deg, #ff8a3d, var(--accent))" }}
       >
         <span className="fcb-ring absolute inset-0 rounded-full bg-inherit opacity-55 [animation:fcb-pulse_2.2s_ease-out_infinite]" />
-        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#fff6ee] relative z-10">
-          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
-        </svg>
-        <span className="absolute right-[calc(100%+0.7rem)] top-1/2 -translate-y-1/2 translate-x-1.5 bg-[var(--text)] text-[#fff6ee] text-[0.78rem] font-semibold whitespace-nowrap px-3 py-2 rounded-md opacity-0 invisible pointer-events-none transition group-hover:opacity-100 group-hover:visible group-hover:translate-x-0">
-          Gọi ngay: 0907.811.767
+        <span className="relative z-10 flex items-center justify-center w-[26px] h-[26px] flex-none">
+          <svg viewBox="0 0 24 24" className="w-full h-full fill-white">
+            <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
+          </svg>
+        </span>
+        <span className="relative z-10 text-white font-bold text-[0.95rem] tracking-wide whitespace-nowrap">
+          0907 811 767
         </span>
       </a>
       <a
