@@ -44,7 +44,6 @@ const MEGA_COLUMNS: {
 
 const NAV_LINKS = [
   { label: "Ứng dụng", href: "/#industries" },
-  { label: "Đại lý", href: "/dai-ly" },
   { label: "Liên hệ", href: "/lien-he" },
   { label: "Bảo hành", href: "/bao-hanh" },
   { label: "Lịch sử Dynabrade", href: "/lich-su-dynabrade" },
@@ -105,6 +104,9 @@ export default function Header() {
           DYNA<span className="text-[var(--accent)]">BRADE</span>_VN
         </Link>
         <nav className="hidden md:flex items-center gap-10 text-[0.85rem] font-medium text-[var(--muted)]">
+          <Link href="/dai-ly" className="hover:text-[var(--text)]">
+            Nhà phân phối
+          </Link>
           <div className="relative flex items-center" ref={groupRef}>
             <button
               type="button"
