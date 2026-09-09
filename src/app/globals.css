@@ -54,6 +54,10 @@
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+
+  .fcb-phone-icon {
+    animation: fcb-ring 1.4s ease-in-out infinite;
+  }
 }
 
 @keyframes fcb-pulse {
@@ -67,9 +71,38 @@
   }
 }
 
+@keyframes fcb-ring {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-18deg);
+  }
+  20% {
+    transform: rotate(16deg);
+  }
+  30% {
+    transform: rotate(-14deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fcb-ring {
     animation: none !important;
     display: none !important;
+  }
+
+  .fcb-phone-icon {
+    animation: none !important;
   }
 }
