@@ -79,11 +79,11 @@ export default async function ProductPage({ params }: Props) {
               <span className="font-display text-[2rem] text-[var(--accent)]">{priceFmt} USD</span>
             </div>
             <p className="text-[0.78rem] text-[var(--muted)] mb-4">
-              / chưa gồm thuế nhập khẩu (giá niêm yết hãng)
+              / chưa gồm thuế nhập khẩu (giá niêm yết của hãng tại Mỹ)
             </p>
             <p className="text-[0.85rem] text-[var(--muted)] mb-0">
               Giá bán tại Việt Nam theo báo giá chính thức từ Nhất Quán — vui lòng liên hệ để
-              nhận báo giá VNĐ kèm chi phí lắp đặt, bảo hành.
+              nhận báo giá VNĐ kèm chi phí lắp đặt, bảo hành và nhiều chính sách hấp dẫn.
             </p>
           </div>
 
