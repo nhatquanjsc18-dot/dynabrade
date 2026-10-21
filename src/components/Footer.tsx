@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-wrap justify-between gap-2 text-[0.75rem] text-[var(--muted)]">
-          <span>© Nhất Quán JSC — Đại lý phân phối Dynabrade</span>
+          <span>© Nhất Quán JSC — Đại lý phân phối chính hãng Dynabrade</span>
         </div>
       </div>
     </footer>

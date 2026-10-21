@@ -72,7 +72,7 @@ export default function CatalogClient({
       <div className="pt-10 pb-8">
         <h1 className="font-display uppercase text-[2rem] mb-2.5">Danh Mục Sản Phẩm</h1>
         <p className="text-[var(--muted)] max-w-[60ch] leading-relaxed mb-6">
-          Toàn bộ dụng cụ khí nén Dynabrade phân phối bởi Nhất Quán tại Việt Nam —{" "}
+          Toàn bộ dụng cụ khí nén Dynabrade phân phối chính hãng bởi Nhất Quán tại Việt Nam —{" "}
           {products.length} sản phẩm, chia theo đúng nhóm của hãng.
         </p>
         <div className="relative max-w-[520px]">
