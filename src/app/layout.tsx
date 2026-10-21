@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Nhất Quán",
   },
   description:
-    "Nhất Quán - nhà phân phối chính hãng Dynabrade tại Việt Nam. Dụng cụ khí nén chà nhám, mài, đánh bóng cho ngành sơn sửa ô tô, hàng không và gia công kim loại.",
+    "Nhất Quán - nhà phân phối Dynabrade tại Việt Nam. Dụng cụ khí nén chà nhám, mài, đánh bóng cho ngành sơn sửa ô tô, hàng không và gia công kim loại.",
 };
 
 const organizationLd = {
@@ -44,7 +44,7 @@ const organizationLd = {
   email: 'hoai@nhatquan.vn',
   areaServed: 'VN',
   description:
-    'Nhà phân phối dụng cụ khí nén Dynabrade chính hãng, cùng thiết bị phun sơn Devilbiss, Binks và máy chà nhám Mirka tại Việt Nam.',
+    'Nhà phân phối dụng cụ khí nén Dynabrade, cùng thiết bị phun sơn Devilbiss, Binks và máy chà nhám Mirka tại Việt Nam.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
