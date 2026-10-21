@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nhà Phân Phối Nhất Quán - Đại Lý Dynabrade Việt Nam",
+  title: "Nhà Phân Phối Nhất Quán - Đại Lý Chính Hãng Dynabrade Việt Nam",
   description:
-    "Nhất Quán là nhà phân phối Dynabrade tại Việt Nam, cung cấp dụng cụ khí nén chất lượng cao cho ngành sơn sửa, gia công kim loại và hoàn thiện bề mặt.",
+    "Nhất Quán là nhà phân phối chính hãng Dynabrade tại Việt Nam, cung cấp dụng cụ khí nén chất lượng cao cho ngành sơn sửa, gia công kim loại và hoàn thiện bề mặt.",
 };
 
 const CARDS = [
   {
     num: "01",
-    title: "Nhà phân phối",
+    title: "Nhà phân phối chính hãng",
     desc: "Nhất Quán là đơn vị phân phối chính thức của Dynabrade Inc. (Hoa Kỳ) tại Việt Nam, đảm bảo nguồn hàng chính hãng 100%, có đầy đủ chứng từ CO/CQ.",
   },
   {
@@ -57,7 +57,7 @@ export default function DistributorPage() {
             Nhà Phân Phối Nhất Quán
           </h1>
           <p className="text-[1.05rem] text-[rgba(255,248,242,0.85)] max-w-[58ch] leading-relaxed">
-            Nhất Quán JSC là nhà phân phối Dynabrade tại Việt Nam, mang di sản hơn 50
+            Nhất Quán JSC là nhà phân phối chính hãng Dynabrade tại Việt Nam, mang di sản hơn 50
             năm chế tạo dụng cụ khí nén Mỹ đến với ngành công nghiệp trong nước.
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function DistributorPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/wp-content/uploads/dynabrade-images/nhatquan-authorized-distributor.jpg"
-              alt="Nhất Quán - Nhà phân phối Dynabrade tại Việt Nam"
+              alt="Nhất Quán - Nhà phân phối chính hãng Dynabrade tại Việt Nam"
               className="w-full h-full object-cover"
             />
           </div>
