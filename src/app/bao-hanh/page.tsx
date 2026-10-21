@@ -40,7 +40,7 @@ export default function WarrantyPage() {
         </div>
         <h1 className="font-display uppercase text-[2.4rem] mb-3">Chính Sách Bảo Hành</h1>
         <p className="text-[var(--muted)] max-w-[68ch] leading-relaxed text-[1.02rem] mb-3">
-          Toàn bộ dụng cụ khí nén, dụng cụ điện và máy hút bụi Dynabrade phân phối chính hãng bởi
+          Toàn bộ dụng cụ khí nén, dụng cụ điện và máy hút bụi Dynabrade phân phối bởi
           Nhất Quán đều được áp dụng đúng chính sách bảo hành gốc từ nhà sản xuất Dynabrade Inc.
           (Hoa Kỳ), không qua trung gian rút ngắn thời hạn.
         </p>
