@@ -34,6 +34,19 @@ export const metadata: Metadata = {
     "Nhất Quán - nhà phân phối chính hãng Dynabrade tại Việt Nam. Dụng cụ khí nén chà nhám, mài, đánh bóng cho ngành sơn sửa ô tô, hàng không và gia công kim loại.",
 };
 
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Công ty CP Công nghiệp Nhất Quán',
+  alternateName: 'Nhat Quan INS JSC',
+  url: 'https://nhatquan.vn',
+  telephone: '+84907811767',
+  email: 'hoai@nhatquan.vn',
+  areaServed: 'VN',
+  description:
+    'Nhà phân phối dụng cụ khí nén Dynabrade chính hãng, cùng thiết bị phun sơn Devilbiss, Binks và máy chà nhám Mirka tại Việt Nam.',
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -55,6 +68,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         <Header />
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        />
         <Footer />
         <FloatingContact />
       </body>
