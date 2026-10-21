@@ -37,8 +37,30 @@ export default async function ProductPage({ params }: Props) {
   const related = getRelatedProducts(product, 4);
   const priceFmt = product.price.toLocaleString("vi-VN");
 
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name_vn,
+    sku: product.ref,
+    mpn: product.ref,
+    image: (() => {
+      try {
+        return new URL(product.img, "https://dynabrade.nhatquan.vn").toString();
+      } catch {
+        return undefined;
+      }
+    })(),
+    description: `${product.name_vn} (mã REF: ${product.ref}) chính hãng Dynabrade, phân phối bởi Nhất Quán tại Việt Nam.`,
+    brand: { "@type": "Brand", name: "Dynabrade" },
+    url: `https://dynabrade.nhatquan.vn/san-pham/${product.slug}/`,
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd).replace(/</g, "\\u003c") }}
+      />
       <div className="wrap text-[0.78rem] text-[var(--muted)] pt-6">
         <Link href="/">Trang chủ</Link>
         <span className="mx-1.5">/</span>
