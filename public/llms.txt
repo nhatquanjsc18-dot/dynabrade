@@ -11,7 +11,7 @@
 ## Trang chính
 - [Trang chủ](https://dynabrade.nhatquan.vn/): giới thiệu Dynabrade và các ngành ứng dụng
 - [Sản phẩm](https://dynabrade.nhatquan.vn/san-pham/): danh mục dụng cụ khí nén theo nhóm (máy mài góc, máy chà nhám, máy đánh bóng...)
-- [Nhà phân phối](https://dynabrade.nhatquan.vn/nha-phan-phoi/): thông tin nhà phân phối chính hãng
+- [Nhà phân phối](https://dynabrade.nhatquan.vn/nha-phan-phoi/): thông tin nhà phân phối
 - [Bảo hành](https://dynabrade.nhatquan.vn/bao-hanh/): chính sách bảo hành
 - [Lịch sử Dynabrade](https://dynabrade.nhatquan.vn/lich-su-dynabrade/): giới thiệu thương hiệu
 - [Liên hệ](https://dynabrade.nhatquan.vn/lien-he/): yêu cầu tư vấn và báo giá
